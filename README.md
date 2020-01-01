@@ -18,10 +18,11 @@
 * divide int elements
 * get modulo of two lists
 * delete entire list
+* get avarage
+* get **min** or **max** value
 
 #### coming soon ! (probably today :P)
 * shuffle elements
-* get avarage
 * reverse the list
 
 ## Doubly Linked List
