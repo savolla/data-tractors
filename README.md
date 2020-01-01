@@ -14,15 +14,15 @@
 * sum two **int** list with **+** operator
 * likewise substract two int lists with **-** operator
 * quickly add two string lists and assign with **+=** operator
-
-#### coming soon ! (probably today :P)
-* shuffle elements
 * multiply int elements
 * divide int elements
 * get modulo of two lists
+* delete entire list
+
+#### coming soon ! (probably today :P)
+* shuffle elements
 * get avarage
 * reverse the list
-* delete entire list
 
 ## Doubly Linked List
 ## Stack
