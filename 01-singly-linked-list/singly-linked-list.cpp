@@ -173,7 +173,7 @@ class LinkedList {
         T operator[] (int index) {
             if (index > length || index < 0) {
                 std::cout << "ERROR: Out of range!" << std::endl;
-                return ""; // FIXME: what is the best solution here?
+                exit(0); // FIXME: what is the best solution here?
             }
             else {
                 Node *tmp = head;
@@ -346,6 +346,14 @@ class LinkedList {
          */
         LinkedList<int> operator / (LinkedList<int> linked_list_to_divide) {
 
+            // check is there are zeros in denominator
+            for (int i=0; i < linked_list_to_divide.length; i++) {
+                if (linked_list_to_divide[i] == 0) {
+                    std::cout << "ERROR: There is a 0 inside the denominator list" << std::endl;
+                    exit(0);
+                }
+            }
+
             LinkedList<int> tmp_list;
             Node *divider0 = this->head;
             Node *divider1 = linked_list_to_divide.head;
@@ -415,17 +423,34 @@ class LinkedList {
             return tmp_list;
         }
 
+        double get_avarage()
+        {
+            int amount_of_elements = this->length;
+            double total = 0;
+            for (int i=0; i < amount_of_elements; i++) {
+                total += (double)this->operator[](i); // casting to double for accuracy
+            }
+            return total/amount_of_elements;
+        }
 
-        //double get_avarage()
-        //{
-        //    int amount_of_elements = this->length;
-        //    double total = 0;
-        //    for (int i=0; i < amount_of_elements; i++) {
-        //        total += (double)this->operator[](i); // casting to double for accuracy
-        //    }
-        //    return total/amount_of_elements;
-        //}
-
+        // returns the maximum value of the int list
+        int get_max() {
+            if (head != nullptr) { // if list is not empty
+                Node *tmp = head;
+                int max = head->data; // if there is only one element, this will instantly find max
+                while (tmp != nullptr) {
+                    if (tmp->data > max) {
+                        max = tmp->data;
+                    }
+                    tmp = tmp->next;
+                }
+                return max;
+            }
+            else {
+                std::cout << "ERROR: List is empty" << std::endl;
+                return -1;
+            }
+        }
 };
 
 int main(void) {
@@ -458,12 +483,10 @@ int main(void) {
     D.add_to_tail(33);
     D.add_to_tail(1);
     D.add_to_tail(382);
-    D.add_to_tail(382);
+    D.add_to_tail(999);
     D.add_to_tail(382);
 
-    LinkedList<int> E;
-
-    //std::cout << D.get_avarage() << std::endl;
+    std::cout << D.get_max() << std::endl;
 
     return 0;
 }
