@@ -1,7 +1,5 @@
 // TODO: shuffle
-// TODO: find max
-// TODO: find min
-//
+
 #include <iostream>
 template <class T>
 
@@ -445,6 +443,25 @@ class LinkedList {
                     tmp = tmp->next;
                 }
                 return max;
+            }
+            else {
+                std::cout << "ERROR: List is empty" << std::endl;
+                return -1;
+            }
+        }
+
+        // returns thw minimum value of the int list
+        int get_min() {
+            if (head != nullptr) { // if list is not empty
+                Node *tmp = head;
+                int min = head->data; // if there is only one element, this will instantly find max
+                while (tmp != nullptr) {
+                    if (tmp->data < min) {
+                        min = tmp->data;
+                    }
+                    tmp = tmp->next;
+                }
+                return min;
             }
             else {
                 std::cout << "ERROR: List is empty" << std::endl;
