@@ -1,75 +1,75 @@
 
 # Table of Contents
 
-1.  [Array](#orgf523cbe)
-2.  [Stack](#orga7e94d0)
-3.  [Queue](#org0fff86e)
-4.  [Singly-Linked List](#org05ef637)
-5.  [Doubly-Linked List](#orge5db4dc)
-6.  [Skip List](#orgb736b49)
-7.  [Hash Table](#org68c4f32)
-8.  [Binary Search Tree](#orgc4665ca)
-    1.  [what is it](#orgcb35d1e)
-    2.  [costs](#orgb0a1754)
-    3.  [operations](#orgb6347d2)
-        1.  [insertion](#org45059db)
-        2.  [search](#org30dba85)
-        3.  [deletion](#orgd9f5c4e)
-    4.  [pros](#org49c67c3)
-    5.  [cons](#org0310adc)
-    6.  [use cases](#orgefd916f)
-9.  [Cartesian Tree](#org8711dff)
-10. [B-Tree](#orge8a8202)
-11. [Red-Black Tree](#orgdac1893)
-12. [Splay Tree](#org4f1a89a)
-13. [AVL Tree](#orgf0826e2)
-14. [KD Tree](#org53a981f)
+1.  [Array](#org39b2193)
+2.  [Stack](#org329fb3d)
+3.  [Queue](#orgc045308)
+4.  [Singly-Linked List](#org41666f7)
+5.  [Doubly-Linked List](#org4b0e8e4)
+6.  [Skip List](#orgf5737b5)
+7.  [Hash Table](#orgb65a66b)
+8.  [Binary Search Tree](#org71c1db2)
+    1.  [what is it](#orgeaed9cd)
+    2.  [costs](#org8880420)
+    3.  [operations](#org660e7f7)
+        1.  [insertion](#org8b669f9)
+        2.  [search](#org2e61093)
+        3.  [deletion](#org8ae32cf)
+    4.  [pros](#org51b9a26)
+    5.  [cons](#org790e06b)
+    6.  [use cases](#org77aaea7)
+9.  [Cartesian Tree](#org4818933)
+10. [B-Tree](#org4b4925c)
+11. [Red-Black Tree](#org60ee47b)
+12. [Splay Tree](#orgd809390)
+13. [AVL Tree](#orgbda5cff)
+14. [KD Tree](#org9daebd4)
 
 
 
-<a id="orgf523cbe"></a>
+<a id="org39b2193"></a>
 
 # Array
 
 
-<a id="orga7e94d0"></a>
+<a id="org329fb3d"></a>
 
 # Stack
 
 
-<a id="org0fff86e"></a>
+<a id="orgc045308"></a>
 
 # Queue
 
 
-<a id="org05ef637"></a>
+<a id="org41666f7"></a>
 
 # Singly-Linked List
 
 
-<a id="orge5db4dc"></a>
+<a id="org4b0e8e4"></a>
 
 # Doubly-Linked List
 
 
-<a id="orgb736b49"></a>
+<a id="orgf5737b5"></a>
 
 # Skip List
 
 
-<a id="org68c4f32"></a>
+<a id="orgb65a66b"></a>
 
 # Hash Table
 
 
-<a id="orgc4665ca"></a>
+<a id="org71c1db2"></a>
 
 # Binary Search Tree
 
-<img src="./.img/bst.png">
+![img](./.img/bst.png)
 
 
-<a id="orgcb35d1e"></a>
+<a id="orgeaed9cd"></a>
 
 ## what is it
 
@@ -79,7 +79,7 @@ A binary search tree is a tree data structure where:
 -   The nodes to the right are larger than the current node.
 
 
-<a id="orgb0a1754"></a>
+<a id="org8880420"></a>
 
 ## costs
 
@@ -140,20 +140,17 @@ A binary search tree is a tree data structure where:
 </table>
 
 
-<a id="orgb6347d2"></a>
+<a id="org660e7f7"></a>
 
 ## operations
 
 
-<a id="org45059db"></a>
+<a id="org8b669f9"></a>
 
 ### insertion
 
 1.  pseudo code
-
-    ```c
-        // T: Tree root
-        // k: new value
+    
         insert(T, k)
           if T == NIL
             T = new Node
@@ -163,11 +160,8 @@ A binary search tree is a tree data structure where:
           else
             T.right = insert(T.right, k)
           return T
-    ```
-
 2.  C code
     
-    ```c
         // T: Tree root
         // k: new value
         struct Node *insert(struct Node *T, int k) {
@@ -183,11 +177,8 @@ A binary search tree is a tree data structure where:
             }
             return T;
         }
-    ```
-
 3.  C++ code with class
     
-    ```cpp
         class Node {
             public:
                 Node( int k ) {
@@ -222,59 +213,122 @@ A binary search tree is a tree data structure where:
                     root = insert( root, k);
                 }
         };
-    ```
 
-<a id="org30dba85"></a>
+
+<a id="org2e61093"></a>
 
 ### search
 
+1.  pseudo code
+    
+        treeSearch (x, k)
+          if x == NIL or k == x.key
+            return x
+          if k < x.key
+            return treeSearch(x.left, k)
+          else
+            return treeSearch(x.right, k)
+2.  C code
+    
+        struct Node *search( struct Node *T, int k ) {
+            if ( T == NULL || k == T->key ) {
+                return T;
+            }
+            if ( k < T->key ) {
+                return search( T->left, k );
+            }
+            else
+                return search( T->right, k );
+        }
+3.  C++ code with class
+    
+        class Node {
+            public:
+                int key;
+                Node *left;
+                Node *right;
+        
+                Node() {
+                    left = right = nullptr;
+                }
+        
+                Node( int k ) {
+                    key = k;
+                    left = right = nullptr;
+                }
+        };
+        
+        class BST {
+            private:
+                Node *search( Node *T, int k ) {
+                    if ( T == nullptr || k == T->key ) {
+                        return T;
+                    }
+                    if ( k < T->key ) {
+                        return search( T->left, k );
+                    }
+                    else
+                        return search( T->right, k );
+                }
+        
+            public:
+                Node *root;
+                BST() {
+                    root = nullptr;
+                }
+        
+                Node *search( int k ) {
+                    return search( root, k );
+                }
+        };
 
-<a id="orgd9f5c4e"></a>
+
+<a id="org8ae32cf"></a>
 
 ### deletion
 
 
-<a id="org49c67c3"></a>
+<a id="org51b9a26"></a>
 
 ## pros
 
 
-<a id="org0310adc"></a>
+<a id="org790e06b"></a>
 
 ## cons
 
 
-<a id="orgefd916f"></a>
+<a id="org77aaea7"></a>
 
 ## use cases
 
 
-<a id="org8711dff"></a>
+<a id="org4818933"></a>
 
 # Cartesian Tree
 
 
-<a id="orge8a8202"></a>
+<a id="org4b4925c"></a>
 
 # B-Tree
 
 
-<a id="orgdac1893"></a>
+<a id="org60ee47b"></a>
 
 # Red-Black Tree
 
 
-<a id="org4f1a89a"></a>
+<a id="orgd809390"></a>
 
 # Splay Tree
 
 
-<a id="orgf0826e2"></a>
+<a id="orgbda5cff"></a>
 
 # AVL Tree
 
 
-<a id="org53a981f"></a>
+<a id="org9daebd4"></a>
 
 # KD Tree
 
