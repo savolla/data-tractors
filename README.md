@@ -66,7 +66,7 @@
 
 # Binary Search Tree
 
-![img](./.img/bst.png)
+<img src="./.img/bst.png" width="333" height="333">
 
 
 <a id="orgcb35d1e"></a>
@@ -104,29 +104,29 @@ A binary search tree is a tree data structure where:
 <tbody>
 <tr>
 <td class="org-left">Access</td>
-<td class="org-left">\(O(\log(n))\)</td>
-<td class="org-left">\(O(n)\)</td>
+<td class="org-left">O(log(n))</td>
+<td class="org-left">O(n)</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Search</td>
-<td class="org-left">\(O(\log(n))\)</td>
-<td class="org-left">\(O(n)\)</td>
+<td class="org-left">O(log(n))</td>
+<td class="org-left">O(n)</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Insertion</td>
-<td class="org-left">\(O(\log(n))\)</td>
-<td class="org-left">\(O(n)\)</td>
+<td class="org-left">O(log(n))</td>
+<td class="org-left">O(n)\)</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Deletion</td>
-<td class="org-left">\(O(\log(n))\)</td>
-<td class="org-left">\(O(n)\)</td>
+<td class="org-left">O(log(n))</td>
+<td class="org-left">O(n)</td>
 </tr>
 </tbody>
 
@@ -134,7 +134,7 @@ A binary search tree is a tree data structure where:
 <tr>
 <td class="org-left">Space</td>
 <td class="org-left">&#xa0;</td>
-<td class="org-left">\(O(n)\)</td>
+<td class="org-left">O(n)</td>
 </tr>
 </tbody>
 </table>
@@ -151,7 +151,7 @@ A binary search tree is a tree data structure where:
 
 1.  pseudo code
 
-```c
+    ```c
         // T: Tree root
         // k: new value
         insert(T, k)
@@ -163,8 +163,7 @@ A binary search tree is a tree data structure where:
           else
             T.right = insert(T.right, k)
           return T
-```
-
+    ```
 
 2.  C code
     
@@ -224,7 +223,6 @@ A binary search tree is a tree data structure where:
                 }
         };
     ```
-
 
 <a id="org30dba85"></a>
 
