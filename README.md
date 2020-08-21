@@ -1,75 +1,76 @@
 
 # Table of Contents
 
-1.  [Array](#org39b2193)
-2.  [Stack](#org329fb3d)
-3.  [Queue](#orgc045308)
-4.  [Singly-Linked List](#org41666f7)
-5.  [Doubly-Linked List](#org4b0e8e4)
-6.  [Skip List](#orgf5737b5)
-7.  [Hash Table](#orgb65a66b)
-8.  [Binary Search Tree](#org71c1db2)
-    1.  [what is it](#orgeaed9cd)
-    2.  [costs](#org8880420)
-    3.  [operations](#org660e7f7)
-        1.  [insertion](#org8b669f9)
-        2.  [search](#org2e61093)
-        3.  [deletion](#org8ae32cf)
-    4.  [pros](#org51b9a26)
-    5.  [cons](#org790e06b)
-    6.  [use cases](#org77aaea7)
-9.  [Cartesian Tree](#org4818933)
-10. [B-Tree](#org4b4925c)
-11. [Red-Black Tree](#org60ee47b)
-12. [Splay Tree](#orgd809390)
-13. [AVL Tree](#orgbda5cff)
-14. [KD Tree](#org9daebd4)
+1.  [Array](#orgad2287b)
+2.  [Stack](#orgbd8085c)
+3.  [Queue](#org1e42fa2)
+4.  [Singly-Linked List](#orgcf24672)
+5.  [Doubly-Linked List](#org2804bca)
+6.  [Skip List](#org25cb8a9)
+7.  [Hash Table](#org2fa0c0e)
+8.  [Binary Search Tree](#orge9c346e)
+    1.  [what is it](#orgc1e4609)
+    2.  [costs](#org647470f)
+    3.  [operations](#orgfa9cec1)
+        1.  [insertion](#org0202f32)
+        2.  [search](#orga7baaf9)
+        3.  [deletion](#orgc238e5a)
+        4.  [inorder Traversal](#orgd3a4e90)
+    4.  [pros](#org27c986f)
+    5.  [cons](#org38f18a8)
+    6.  [use cases](#org659162f)
+9.  [Cartesian Tree](#orgbfe9855)
+10. [B-Tree](#org525cd41)
+11. [Red-Black Tree](#orgef1ff65)
+12. [Splay Tree](#org0c8f8ac)
+13. [AVL Tree](#orge2a140e)
+14. [KD Tree](#orgb894337)
 
 
 
-<a id="org39b2193"></a>
+<a id="orgad2287b"></a>
 
 # Array
 
 
-<a id="org329fb3d"></a>
+<a id="orgbd8085c"></a>
 
 # Stack
 
 
-<a id="orgc045308"></a>
+<a id="org1e42fa2"></a>
 
 # Queue
 
 
-<a id="org41666f7"></a>
+<a id="orgcf24672"></a>
 
 # Singly-Linked List
 
 
-<a id="org4b0e8e4"></a>
+<a id="org2804bca"></a>
 
 # Doubly-Linked List
 
 
-<a id="orgf5737b5"></a>
+<a id="org25cb8a9"></a>
 
 # Skip List
 
 
-<a id="orgb65a66b"></a>
+<a id="org2fa0c0e"></a>
 
 # Hash Table
 
 
-<a id="org71c1db2"></a>
+<a id="orge9c346e"></a>
 
 # Binary Search Tree
 
 ![img](./.img/bst.png)
 
 
-<a id="orgeaed9cd"></a>
+<a id="orgc1e4609"></a>
 
 ## what is it
 
@@ -79,7 +80,7 @@ A binary search tree is a tree data structure where:
 -   The nodes to the right are larger than the current node.
 
 
-<a id="org8880420"></a>
+<a id="org647470f"></a>
 
 ## costs
 
@@ -140,12 +141,12 @@ A binary search tree is a tree data structure where:
 </table>
 
 
-<a id="org660e7f7"></a>
+<a id="orgfa9cec1"></a>
 
 ## operations
 
 
-<a id="org8b669f9"></a>
+<a id="org0202f32"></a>
 
 ### insertion
 
@@ -215,7 +216,7 @@ A binary search tree is a tree data structure where:
         };
 
 
-<a id="org2e61093"></a>
+<a id="orga7baaf9"></a>
 
 ### search
 
@@ -283,52 +284,112 @@ A binary search tree is a tree data structure where:
         };
 
 
-<a id="org8ae32cf"></a>
+<a id="orgc238e5a"></a>
 
 ### deletion
 
 
-<a id="org51b9a26"></a>
+<a id="orgd3a4e90"></a>
+
+### inorder Traversal
+
+1.  pseudo code
+    
+        iTraversal(T)
+          if T != NIL
+            iTraversal(T.left)
+            print T.key
+            iTraversal(T.right)
+2.  C code
+    
+        void inorderTraverse( struct Node *T ) {
+            if ( T != NULL ) {
+                inorderTraverse( T->left );
+                printf("%d, ", T->key);
+                inorderTraverse( T->right );
+            }
+        }
+3.  C++ code with classes
+    
+        class Node {
+            public:
+                int key;
+                Node *left;
+                Node *right;
+        
+                Node() {
+                    left = right = nullptr;
+                }
+        
+                Node( int k ) {
+                    key = k;
+                    left = right = nullptr;
+                }
+        };
+        
+        class BST {
+            private:
+                void inorderTraverse( Node *T ) {
+                    if ( T != NULL ) {
+                        inorderTraverse( T->left );
+                        printf("%d, ", T->key);
+                        inorderTraverse( T->right );
+                    }
+                }
+        
+            public:
+                Node *root;
+                BST() {
+                    root = nullptr;
+                }
+        
+                void inorderTraverse() {
+                    inorderTraverse( root );
+                }
+        };
+
+
+<a id="org27c986f"></a>
 
 ## pros
 
 
-<a id="org790e06b"></a>
+<a id="org38f18a8"></a>
 
 ## cons
 
 
-<a id="org77aaea7"></a>
+<a id="org659162f"></a>
 
 ## use cases
 
 
-<a id="org4818933"></a>
+<a id="orgbfe9855"></a>
 
 # Cartesian Tree
 
 
-<a id="org4b4925c"></a>
+<a id="org525cd41"></a>
 
 # B-Tree
 
 
-<a id="org60ee47b"></a>
+<a id="orgef1ff65"></a>
 
 # Red-Black Tree
 
 
-<a id="orgd809390"></a>
+<a id="org0c8f8ac"></a>
 
 # Splay Tree
 
 
-<a id="orgbda5cff"></a>
+<a id="orge2a140e"></a>
 
 # AVL Tree
 
 
-<a id="org9daebd4"></a>
+<a id="orgb894337"></a>
 
 # KD Tree
 
