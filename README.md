@@ -66,7 +66,7 @@
 
 # Binary Search Tree
 
-<img src="./.img/bst.png" width="333" height="333">
+<img src="./.img/bst.png">
 
 
 <a id="orgcb35d1e"></a>
@@ -119,7 +119,7 @@ A binary search tree is a tree data structure where:
 <tr>
 <td class="org-left">Insertion</td>
 <td class="org-left">O(log(n))</td>
-<td class="org-left">O(n)\)</td>
+<td class="org-left">O(n)</td>
 </tr>
 
 
