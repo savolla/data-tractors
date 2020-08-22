@@ -107,8 +107,10 @@ A binary search tree is a tree data structure where:
 - [C++ class](inorder-traversal/cpp-class.cpp)
 
 Inorder traversal can be used to **sort** the binary tree
+
 </details>
 
+<details>
 <summary>preorder traversal</summary>
 
 - [pseudo code](preorder-traversal/pseudo.c)
@@ -118,6 +120,7 @@ Inorder traversal can be used to **sort** the binary tree
 preorder Traversal can be used to **copy** the binary tree
 </details>
 
+<details>
 <summary>postorder traversal</summary>
 
 - [pseudo code](postorder-traversal/pseudo.c)
