@@ -1,15 +1,15 @@
 
-# Binary Search Tree
+## Binary Search Tree
 
 ![img](../.img/bst.png)
 
-## what is it
+### what is it
 
 A binary search tree is a tree data structure where:
 
 -   The nodes to the left are smaller than the current node.
 -   The nodes to the right are larger than the current node.
-## costs
+### costs
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -67,10 +67,7 @@ A binary search tree is a tree data structure where:
 </tbody>
 </table>
 
-
-
-
-## operations
+### operations
 
 <details>
 <summary>insertion</summary>
@@ -130,7 +127,19 @@ preorder Traversal can be used to **copy** the binary tree
 postorder Traversal can be used to **delete** the binary tree
 </details>
 
-## complete implementation
-## pros
-## cons
-## use cases
+<details>
+<summary>get minimum (recursive)</summary>
+
+- [pseudo code](get-minimum-recursive/pseudo.c)
+- [C code](get-minimum-recursive/c-code.c)
+- [C++ class](get-minimum-recursive/cpp-class.cpp)
+
+postorder Traversal can be used to **delete** the binary tree
+</details>
+    
+### complete implementation
+- [C implementation](complete-implementation/c-code.c)
+- [C++ implementation](complete-implementation/cpp-class.cpp)
+### pros
+### cons
+### use cases
