@@ -17,8 +17,8 @@ class Node {
 class BST {
     private:
         void preorderTraverse( Node *T ) {
-            if ( T != NULL ) {
-                printf("%d, ", T->key);
+            if ( T != nullptr ) {
+                cout << T->key << ", ";
                 preorderTraverse( T->left );
                 preorderTraverse( T->right );
             }

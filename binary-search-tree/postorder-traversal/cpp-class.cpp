@@ -17,10 +17,10 @@ class Node {
 class BST {
     private:
         void postorderTraverse( Node *T ) {
-            if ( T != NULL ) {
+            if ( T != nullptr ) {
                 postorderTraverse( T->left );
                 postorderTraverse( T->right );
-                printf("%d, ", T->key);
+                cout << T->key << ", ";
             }
         }
 

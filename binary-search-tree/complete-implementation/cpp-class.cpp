@@ -51,6 +51,22 @@ class BST {
             }
         }
 
+        void postorderTraverse( Node *T ) {
+            if ( T != nullptr ) {
+                postorderTraverse( T->left );
+                postorderTraverse( T->right );
+                cout << T->key << ", ";
+            }
+        }
+
+        void preorderTraverse( Node *T ) {
+            if ( T != nullptr ) {
+                cout << T->key << ", ";
+                preorderTraverse( T->left );
+                preorderTraverse( T->right );
+            }
+        }
+
         Node *getMinRec( Node *T ) {
             if ( T == nullptr ) {
                 return nullptr;
@@ -108,6 +124,14 @@ class BST {
 
         void inorderTraverse() {
             inorderTraverse( root );
+        }
+
+        void postorderTraverse() {
+            postorderTraverse( root );
+        }
+
+        void preorderTraverse() {
+            preorderTraverse( root );
         }
 
         Node *getMinRec() {
