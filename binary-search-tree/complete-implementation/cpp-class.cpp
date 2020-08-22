@@ -46,7 +46,7 @@ class BST {
         void inorderTraverse( Node *T ) {
             if ( T != NULL ) {
                 inorderTraverse( T->left );
-                printf("%d, ", T->key);
+                cout << T->key << ", ";
                 inorderTraverse( T->right );
             }
         }
