@@ -168,6 +168,7 @@ postorder Traversal can be used to **delete** the binary tree
 ### complete implementation
 - [C implementation](complete-implementation/c-code.c)
 - [C++ implementation](complete-implementation/cpp-class.cpp)
+- [All Pseudo Codes](complete-implementation/all-pseudo-code.md)
 ### pros
 ### cons
 ### use cases
