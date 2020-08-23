@@ -76,7 +76,7 @@ getMin(T)
 #### Traversals
 
 ```c
-iTraversal(T)
+inorder(T)
   if T != NIL
     iTraversal(T.left)
     print T.key
@@ -84,7 +84,7 @@ iTraversal(T)
 ```
 
 ```c
-preTraversal(T)
+preorder(T)
   if T != NIL
     print T.key
     preTraversal(T.left)
@@ -92,7 +92,7 @@ preTraversal(T)
 ```
 
 ```c
-postTraversal(T)
+postorder(T)
   if T != NIL
     postTraversal(T.left)
     postTraversal(T.right)
