@@ -107,6 +107,37 @@ class BST {
             return T;
         }
 
+        Node *deleteNode( Node *T, int k) {
+            if ( T == nullptr ) {
+                return T;
+            }
+            if (k < T->key) {
+                T->left = deleteNode(T->left, k);
+            }
+            else if (k > T->key) {
+                T->right = deleteNode(T->right, k);
+            }
+            else {
+                if (T->left == nullptr ) {
+                    Node *tmp = new Node;
+                    tmp = T->right;
+                    delete T;
+                    return tmp;
+                }
+                else if (T->right == nullptr ) {
+                    Node *tmp = new Node;
+                    tmp = T->left;
+                    delete T;
+                    return tmp;
+                }
+                Node *tmp = new Node;
+                tmp = getMin(T->right);
+                T->key = tmp->key;
+                T->right = deleteNode(T->right, tmp->key);
+            }
+            return T;
+        }
+
     public:
         Node *root;
 
@@ -149,6 +180,10 @@ class BST {
         Node *getMax() {
             return getMax( root );
         }
+
+        Node *deleteNode( int k) {
+            return deleteNode( root, k );
+        }
 };
 
 int main(void) {
@@ -162,9 +197,14 @@ int main(void) {
     T.insert(0);
     T.insert(-40);
 
-    Node *x = new Node();
-    x = T.getMax();
-    cout << x->key;
+    T.inorderTraverse();
+    T.deleteNode(93);
+    T.deleteNode(-40);
+    T.deleteNode(8293);
+    T.deleteNode(29);
+    T.deleteNode(20000);
+    T.deleteNode(20000);
+    T.inorderTraverse();
 
     return 0;
 }
