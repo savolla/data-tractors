@@ -5,10 +5,8 @@
 
 ### what is it
 
-A binary search tree is a tree data structure where:
+a binary tree where the smallest value is always on the top. used to implement a ***priority queue** or **heap sort**
 
--   The nodes to the left are smaller than the current node.
--   The nodes to the right are larger than the current node.
 ### costs
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -23,37 +21,38 @@ A binary search tree is a tree data structure where:
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">BST</th>
-<th scope="col" class="org-left">avarage</th>
+<th scope="col" class="org-left">Heap</th>
 <th scope="col" class="org-left">worst</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td class="org-left">Access</td>
-<td class="org-left">O(log(n))</td>
-<td class="org-left">O(n)</td>
+<td class="org-left">Get Min</td>
+<td class="org-left">O(1)</td>
 </tr>
 
 
 <tr>
-<td class="org-left">Search</td>
+<td class="org-left">Remove Min</td>
 <td class="org-left">O(log(n))</td>
-<td class="org-left">O(n)</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Insertion</td>
 <td class="org-left">O(log(n))</td>
-<td class="org-left">O(n)</td>
 </tr>
 
 
 <tr>
-<td class="org-left">Deletion</td>
-<td class="org-left">O(log(n))</td>
+<td class="org-left">Heapsort</td>
+<td class="org-left">O(n*log(n))</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Heapify</td>
 <td class="org-left">O(n)</td>
 </tr>
 </tbody>
@@ -61,7 +60,6 @@ A binary search tree is a tree data structure where:
 <tbody>
 <tr>
 <td class="org-left">Space</td>
-<td class="org-left">&#xa0;</td>
 <td class="org-left">O(n)</td>
 </tr>
 </tbody>

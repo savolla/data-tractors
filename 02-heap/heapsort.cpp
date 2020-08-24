@@ -1,14 +1,3 @@
-/**
- * @file heapsort.cpp
- *
- * @brief this file contians source code for heap sort
- *
- * @author Oleksiy Nehlyadyuk
- * Contact: savolla@protonmail.com
- *
- */
-#include "./heapsort.h"
-
 // hack for descending sort
 void negateArray(int A[], int n) {
   for (int i=0; i<n; ++i){
@@ -31,10 +20,11 @@ void maxHeapify(int A[], int n, int i) {
   }
 }
 
-// take an ordinary array and convert into heap
+// convert array into heap
 void buildMaxHeap(int A[], int n) {
-  for (int i = n / 2 - 1; i >= 0; i--)
+  for (int i = n/2-1; i >= 0; i--) {
     maxHeapify(A, n, i);
+  }
 }
 
 // sort elements in Ascending order
