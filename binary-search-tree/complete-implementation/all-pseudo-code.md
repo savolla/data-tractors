@@ -76,7 +76,7 @@ getMin(T)
 #### Traversals
 
 ```c
-inorder(T)
+iTraversal(T)
   if T != NIL
     iTraversal(T.left)
     print T.key

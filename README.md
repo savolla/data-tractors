@@ -9,6 +9,7 @@
 - Skip List
 - Hash Table
 - [Binary Search Tree](binary-search-tree/README.md)
+- [Heap](heap/README.md)
 - Cartesian Tree
 - B-Tree
 - Red-Black Tree
