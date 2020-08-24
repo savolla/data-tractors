@@ -22,6 +22,7 @@ a binary tree where the smallest value is always on the top. used to implement a
 <thead>
 <tr>
 <th scope="col" class="org-left">Heap</th>
+<th scope="col" class="org-left">avarage</th>
 <th scope="col" class="org-left">worst</th>
 </tr>
 </thead>
@@ -30,23 +31,27 @@ a binary tree where the smallest value is always on the top. used to implement a
 <tr>
 <td class="org-left">Get Min</td>
 <td class="org-left">O(1)</td>
+<td class="org-left">O(1)</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Remove Min</td>
 <td class="org-left">O(log(n))</td>
+<td class="org-left">O(log(n))</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Insertion</td>
+<td class="org-left">O(1)</td>
 <td class="org-left">O(log(n))</td>
 </tr>
 
 
 <tr>
 <td class="org-left">Heapsort</td>
+<td class="org-left">O(1)</td>
 <td class="org-left">O(n*log(n))</td>
 </tr>
 
@@ -54,12 +59,14 @@ a binary tree where the smallest value is always on the top. used to implement a
 <tr>
 <td class="org-left">Heapify</td>
 <td class="org-left">O(n)</td>
+<td class="org-left">O(n)</td>
 </tr>
 </tbody>
 
 <tbody>
 <tr>
 <td class="org-left">Space</td>
+<td class="org-left">O(n)</td>
 <td class="org-left">O(n)</td>
 </tr>
 </tbody>
